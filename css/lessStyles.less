@@ -1,0 +1,83 @@
+// variables
+@lt-gray: #ddd;
+@background-dark: #512DA8;
+@background-light: rgb(104, 115, 211);
+@background-footer: rgb(185, 191, 247);
+@black-color: #0f0f0f;
+@carousel-item-height: 300px;
+@colorfloralwhite: rgb(255,250,240);
+
+
+// mixin
+.zero-margin (@up-down: 0px, @right-left: 0px) {
+    margin:0px auto;
+	padding: @up-down @right-left;
+}
+.border-content (@px: 1px, @type: solid, @color: @lt-gray) {
+    border-left: @px @type @color;
+    border-right: @px @type @color;
+    border-bottom: @px @type @color;
+}
+
+
+.row-header{
+    .zero-margin();
+}
+
+.row-content {
+    .zero-margin(50px, 0px);
+    border-bottom: 1px ridge;
+    min-height:400px;
+}
+
+.footer{
+    background-color: @background-footer;
+    .zero-margin(20px, 0px);
+}
+
+.jumbotron {
+    .zero-margin(70px, 30px);
+    background: @background-light;
+    color: @colorfloralwhite;
+}
+
+address{
+    font-size:80%;
+    margin:0px;
+    color:#0f0f0f;
+}
+
+body{
+    padding:50px 0px 0px 0px;
+    z-index:0;
+}
+
+.navbar-dark {
+    background-color: @background-dark;
+}
+
+.tab-content {
+    .border-content(1px, solid, @lt-gray);
+    padding: 10px;
+}
+// nesting classes for the carousel
+.carousel {
+    background:@background-light;
+
+    .carousel-item {
+        height: @carousel-item-height;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-height: 300px;
+        }
+    }
+}
+
+#carouselButton {
+    right:0px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+}
